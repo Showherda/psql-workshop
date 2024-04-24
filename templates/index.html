@@ -22,7 +22,7 @@
             {% for customer in customers %}
             <tr>
                 {% for val in customer %}
-                    <th scope="row">{{ val }}</th>
+                    <td scope="row">{{ val }}</td>
                 {% endfor %}
             </tr>
             {% endfor %}
@@ -48,7 +48,7 @@
             {% for product in products_left_join %}
             <tr>
                 {% for val in product %}
-                    <th scope="row">{{ val }}</th>
+                    <td scope="row">{{ val }}</td>
                 {% endfor %}
             </tr>
             {% endfor %}
@@ -74,7 +74,7 @@
             {% for product in products_right_join %}
             <tr>
                 {% for val in product %}
-                    <th scope="row">{{ val }}</th>
+                    <td scope="row">{{ val }}</td>
                 {% endfor %}
             </tr>
             {% endfor %}
@@ -100,7 +100,7 @@
             {% for product in transactions_inner_join %}
             <tr>
                 {% for val in product %}
-                    <th scope="row">{{ val }}</th>
+                    <td scope="row">{{ val }}</td>
                 {% endfor %}
             </tr>
             {% endfor %}
@@ -126,7 +126,7 @@
             {% for product in transactions_full_join %}
             <tr>
                 {% for val in product %}
-                    <th scope="row">{{ val }}</th>
+                    <td scope="row">{{ val }}</td>
                 {% endfor %}
             </tr>
             {% endfor %}
