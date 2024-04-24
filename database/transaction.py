@@ -22,4 +22,5 @@ def get_inner_join(conn):
     cursor.execute(query)
     result = cursor.fetchall()
     cursor.close()
+    # print(query)
     return result

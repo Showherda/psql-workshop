@@ -44,3 +44,10 @@ VALUES ('Harry Maguire', '123-456-7890', 'harry@example.com');
 UPDATE "Product"
 SET "ProductQuantity" = 15
 WHERE "ProductID" = 1;
+
+INSERT INTO "Product" ("ProductName", "ProductDescription", "ProductQuantity", "ProductPrice")
+VALUES ('Headphones', 'Noise-canceling wireless headphones', 50, 99.99),
+       ('Printer', 'All-in-one color laser printer', 15, 249.99);
+
+SELECT * FROM "Product" 
+RIGHT JOIN "Transaction" ON "Product"."ProductID"="Transaction"."ProductID"
