@@ -13,8 +13,8 @@ def get_left_join(conn):
     return result
 
 def get_right_join(conn):
-    product = Table('product')
-    transaction = Table('transaction')
+    product = Table('Product')
+    transaction = Table('Transaction')
     query = PostgreSQLQuery.from_(product).select('*').right_join(transaction).on(product.ProductID == transaction.ProductID)
     query = query.get_sql()
     

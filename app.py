@@ -18,10 +18,18 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    customers = customer.get_all_customers(pool.getconn())
-    products_left_join = product.get_left_join(pool.getconn())
-    products_right_join = product.get_right_join(pool.getconn())
-    transactions_full_join = transaction.get_full_join(pool.getconn())
-    transactions_inner_join = transaction.get_inner_join(pool.getconn())
+    conn = pool.getconn()
+    customers = customer.get_all_customers(conn)
+    products_left_join = product.get_left_join(conn)
+    products_right_join = product.get_right_join(conn)
+    transactions_full_join = transaction.get_full_join(conn)
+    transactions_inner_join = transaction.get_inner_join(conn)
+    pool.putconn(conn)
+
+    # print(customers)
+    # print(products_left_join)
+    # print(products_right_join)
+    # print(transactions_full_join)
+    # print(transactions_inner_join)
 
     return render_template('index.html', customers=customers, products_left_join=products_left_join, products_right_join=products_right_join, transactions_full_join=transactions_full_join, transactions_inner_join=transactions_inner_join)
